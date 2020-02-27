@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
     Collapse,
     Navbar,
@@ -7,11 +7,6 @@ import {
     Nav,
     NavItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText
 } from 'reactstrap';
 
 const NavBar = (props) => {
@@ -23,11 +18,11 @@ const NavBar = (props) => {
         <div>
             <Navbar color="light" light expand="md">
                 <NavbarBrand href="/">Photo Catalog</NavbarBrand>
-                <NavbarToggler onClick={toggle} />
+                <NavbarToggler onClick={toggle}/>
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/upload/">Upload Photo</NavLink>
+                            <NavLink href="/upload">Upload Photo</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="/catalog">Catalog</NavLink>
