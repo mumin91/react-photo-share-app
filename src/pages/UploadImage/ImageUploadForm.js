@@ -69,9 +69,9 @@ let ImageUploadForm = (props) => {
             </Row>
             <Button
                 className={'btn btn-primary'}
-                disabled={!(props.title !== null &&
-                    props.date !== null &&
-                    props.location !== null &&
+                disabled={!(props.title !== "" &&
+                    props.date !== "" &&
+                    props.location !== "" &&
                     props.photo !== null)}
             >
                 Upload

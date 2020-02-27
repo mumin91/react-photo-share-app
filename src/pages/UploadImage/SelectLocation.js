@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import Select from 'react-select';
 
 const options = [
-    {value: 'chocolate', label: 'Chocolate'},
-    {value: 'strawberry', label: 'Strawberry'},
-    {value: 'vanilla', label: 'Vanilla'},
+    {value: 'dhaka', label: 'Dhaka'},
+    {value: 'chattogram', label: 'Chattogram'},
+    {value: 'rajshahi', label: 'Rajshahi'},
+    {value: 'khulna', label: 'Khulna'},
 ];
 
 

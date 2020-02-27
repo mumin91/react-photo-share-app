@@ -6,9 +6,9 @@ import {Container} from "reactstrap";
 import axios from "axios";
 
 const UploadImage = () => {
-    const [title, setTitle] = useState(null)
-    const [date, setDate] = useState(null)
-    const [location, setLocation] = useState(null)
+    const [title, setTitle] = useState('')
+    const [date, setDate] = useState('')
+    const [location, setLocation] = useState('')
     const [photo, setPhoto] = useState(null)
 
     const handleSubmit = async event => {
