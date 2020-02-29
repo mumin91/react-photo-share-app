@@ -5,13 +5,14 @@ import {
 } from 'reactstrap';
 import {useDispatch} from "react-redux";
 import {DELETE_PHOTO} from "../../store/catalog/actionTypes";
+import {UPLOADED_PHOTOS_URL} from "../../constants";
 
 const ImageCard = props => {
     const dispatch = useDispatch();
     return (
         <Card>
             <CardImg top
-                     src={`http://localhost:4000/images/uploads/${props.photo.url}`}
+                     src={`${UPLOADED_PHOTOS_URL}${props.photo.url}`}
                      alt={`${props.photo.title}`}
             />
             <CardBody>

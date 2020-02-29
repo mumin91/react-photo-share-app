@@ -1,6 +1,7 @@
 import {call, put, takeLatest} from 'redux-saga/effects';
 import * as actionTypes from "./actionTypes";
 import {FETCH_PHOTOS} from "./actionTypes";
+import {DELETE_PHOTO_URL, GET_POST_PHOTOS_URL} from "../../constants";
 
 
 
@@ -16,7 +17,7 @@ export function* fetchPhotosSaga() {
 
 
 export const fetchPhotoService = () => {
-    const url = 'http://localhost:4000/photos';
+    const url = GET_POST_PHOTOS_URL;
 
     const parameters = {
         method: 'GET',
@@ -59,7 +60,7 @@ export function* deletePhotoSaga(action, dispatch) {
 
 
 export const deletePhotoService = (photo_id) => {
-    const url = `http://localhost:4000/photo/${photo_id}`;
+    const url = `${DELETE_PHOTO_URL}${photo_id}`;
 
     const parameters = {
         method: 'DELETE',
