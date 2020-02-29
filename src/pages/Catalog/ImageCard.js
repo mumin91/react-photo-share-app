@@ -3,12 +3,15 @@ import {
     Card, CardImg, CardBody,
     CardTitle, Row, Col, Badge, CardFooter, Button
 } from 'reactstrap';
+import {useDispatch} from "react-redux";
+import {DELETE_PHOTO} from "../../store/catalog/actionTypes";
 
-const ImageCard = (props) => {
+const ImageCard = props => {
+    const dispatch = useDispatch();
     return (
         <Card>
             <CardImg top
-                     src={`http://localhost:4000/images/${props.photo.url}`}
+                     src={`http://localhost:4000/images/uploads/${props.photo.url}`}
                      alt={`${props.photo.title}`}
             />
             <CardBody>
@@ -24,8 +27,13 @@ const ImageCard = (props) => {
                     </Col>
                 </Row>
             </CardBody>
-            <CardFooter className="text-center"><Button
-                className="btn btn-block btn-danger">Delete</Button></CardFooter>
+            <CardFooter className="text-center">
+                <Button
+                    className="btn btn-block btn-danger"
+                    onClick={() => dispatch({type: DELETE_PHOTO, id: props.photo._id})}
+                >
+                    Delete
+                </Button></CardFooter>
         </Card>
     );
 };
