@@ -6,10 +6,10 @@ import Select from "react-select";
 
 
 const options = [
-    {value: 'dhaka', label: 'Dhaka'},
-    {value: 'chattogram', label: 'Chattogram'},
-    {value: 'rajshahi', label: 'Rajshahi'},
-    {value: 'khulna', label: 'Khulna'},
+    {value: 'Dhaka', label: 'Dhaka'},
+    {value: 'Chattogram', label: 'Chattogram'},
+    {value: 'Rajshahi', label: 'Rajshahi'},
+    {value: 'Khulna', label: 'Khulna'},
 ];
 
 
@@ -19,13 +19,9 @@ const UploadImage = () => {
     const [location, setLocation] = useState('')
     const [photo, setPhoto] = useState(null)
     const [showAlert, setShowAlert] = useState(false)
-    const [selectedLocation, setSelectedLocation] = useState('');
 
 
-    const handleChange = selectedLocation => {
-        setLocation(selectedLocation.value);
-        setSelectedLocation(location);
-    };
+
 
     const handleSubmit = async event => {
         event.preventDefault();
@@ -33,7 +29,7 @@ const UploadImage = () => {
         let formData = new FormData();
         formData.append('title', title);
         formData.append('date', date);
-        formData.append('location', location);
+        formData.append('location', location.value);
         formData.append('photo', photo, photo.name.toString());
 
         const config = {
@@ -107,8 +103,8 @@ const UploadImage = () => {
                                 <Label for="location">Location</Label>
                                 <Select
                                     name="location"
-                                    value={selectedLocation}
-                                    onChange={handleChange}
+                                    value={location}
+                                    onChange={(location) => setLocation(location)}
                                     options={options}
                                     required
                                 />
