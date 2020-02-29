@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {withRouter, Route, Switch, BrowserRouter as Router, Redirect} from 'react-router-dom';
 
 import routes from './routes';
+import NavBar from "./components/NavBar";
 
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
     render() {
         return (
             <React.Fragment>
+                <NavBar/>
                 <Router>
                     <Switch>
                         {routes.map((route, idx) =>

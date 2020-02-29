@@ -1,34 +1,52 @@
-import { GET_IMAGES, IMAGES_LOADING, IMAGES_FAILED } from './actionTypes';
+import * as actionTypes from "./actionTypes";
+const initialState = {
+    photos: [],
+    loading: false,
+    error: ''
+};
 
-const initialState = {}
+const photos = (state = initialState, action) => {
 
-const images = (state = initialState, action) => {
     switch (action.type) {
-        case GET_IMAGES:
+        case actionTypes.FETCH_PHOTOS:
+            console.log(action)
             state = {
                 ...state,
-                ...action.payload
-            }
-            break;
-        case IMAGES_LOADING:
-            state = {
-                ...state,
-                isLoading: true
+                loading: true,
+                error:''
             };
             break;
-        case IMAGES_FAILED:
+
+
+        case actionTypes.FETCH_PHOTOS_SUCCESSFUL:
+            console.log(action)
             state = {
                 ...state,
-                isError: true,
-                isLoading: false
+                photos: action.payload,
+                loading: false
             };
             break;
+
+
+        case actionTypes.FETCH_PHOTOS_FAILED:
+            state = {
+                ...state,
+                loading: false,
+                error: action.error
+            };
+            break;
+
 
         default:
-            state = { ...state };
+            state = {...state};
             break;
     }
-    return state;
-}
 
-export default images;
+    return state;
+};
+
+export default photos;
+
+
+
+

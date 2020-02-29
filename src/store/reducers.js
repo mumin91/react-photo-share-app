@@ -1,9 +1,9 @@
-import images from './catalog/reducer';
+import photos from './catalog/reducer';
 import {combineReducers} from "redux";
 
 
 const rootReducer = combineReducers({
-    images
+    photos
 });
 
 export default rootReducer;
