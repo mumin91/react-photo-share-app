@@ -3,6 +3,7 @@ import {withRouter} from "react-router-dom";
 import {Button, Col, Container, Form, FormGroup, FormText, Input, Label, Row, UncontrolledAlert} from "reactstrap";
 import axios from "axios";
 import Select from "react-select";
+import {GET_POST_PHOTOS_URL} from "../../constants";
 
 
 const options = [
@@ -39,7 +40,7 @@ const UploadImage = () => {
         };
 
 
-        await axios.post('http://localhost:4000/photos', formData, config)
+        await axios.post(GET_POST_PHOTOS_URL, formData, config)
             .then((response) => {
                 console.log(response)
                 if (response.status === 200) {
@@ -124,8 +125,7 @@ const UploadImage = () => {
                                 onChange={event => setPhoto(event.target.files[0])}
                             />
                             <FormText color="muted">
-                                This is some placeholder block-level help text for the above input.
-                                It's a bit lighter and easily wraps to a new line.
+                                Upload only image files
                             </FormText>
                         </FormGroup>
                     </Col>

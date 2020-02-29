@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+#build
+build/
+
 # dependencies
 /node_modules
 /.pnp
@@ -105,6 +108,7 @@ fabric.properties
 # See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
 
 .idea/
+
 
 # Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
 
